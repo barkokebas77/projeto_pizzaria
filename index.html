@@ -17,44 +17,46 @@
   <a href="#menu">Cardápio</a>
   <a href="#sobre">Sobre Nós</a>
   <a href="#contato">Contato</a>
+  <a href="#carrinho">Carrinho</a>
 </nav>
 
 <div class="container">
   <section id="menu">
     <h2>Nosso Cardápio</h2>
     <div class="menu-item">
-      <img src="https://guiadacozinha.com.br/wp-content/uploads/2007/01/Pizza-marguerita-caseira.webp" 
-           alt="Pizza Margherita" class="menu-img" loading="lazy">
+      <img src="https://guiadacozinha.com.br/wp-content/uploads/2007/01/Pizza-marguerita-caseira.webp" alt="Pizza Margherita" class="menu-img" loading="lazy">
       <strong>Margherita</strong> - Molho de tomate, mussarela e manjericão. R$ 17,50
+      <br><button onclick="adicionarAoCarrinho('Margherita', 17.50)">Adicionar ao Carrinho</button>
     </div>
     <div class="menu-item">
-      <img src="https://blog.novasafra.com.br/wp-content/uploads/2016/01/accb7d_37d37d9f1001e88384dafc6e5cc60c4f.jpg_1024.jpg" 
-           alt="Pizza Calabresa" class="menu-img" loading="lazy">
+      <img src="https://blog.novasafra.com.br/wp-content/uploads/2016/01/accb7d_37d37d9f1001e88384dafc6e5cc60c4f.jpg_1024.jpg" alt="Pizza Calabresa" class="menu-img" loading="lazy">
       <strong>Calabresa</strong> - Mussarela, calabresa e cebola. R$ 17,50
+      <br><button onclick="adicionarAoCarrinho('Calabresa', 17.50)">Adicionar ao Carrinho</button>
     </div>
     <div class="menu-item">
-      <img src="https://www.portalumami.com.br/app/uploads/2021/07/Pizza-4-queijos.jpg" 
-           alt="Pizza Quatro Queijos" class="menu-img" loading="lazy">
+      <img src="https://www.portalumami.com.br/app/uploads/2021/07/Pizza-4-queijos.jpg" alt="Pizza Quatro Queijos" class="menu-img" loading="lazy">
       <strong>Quatro Queijos</strong> - Mussarela, parmesão, gorgonzola e catupiry. R$ 15,50
+      <br><button onclick="adicionarAoCarrinho('Quatro Queijos', 15.50)">Adicionar ao Carrinho</button>
     </div>
     <div class="menu-item">
-      <img src="https://www.ogastronomo.com.br/upload/389528334-curiosidades-sobre-a-pizza-portuguesa.jpg" 
-           alt="Pizza Portuguesa" class="menu-img" loading="lazy">
+      <img src="https://www.ogastronomo.com.br/upload/389528334-curiosidades-sobre-a-pizza-portuguesa.jpg" alt="Pizza Portuguesa" class="menu-img" loading="lazy">
       <strong>Portuguesa</strong> - Mussarela, presunto, ovos, cebola e azeitonas. R$ 15,50
+      <br><button onclick="adicionarAoCarrinho('Portuguesa', 15.50)">Adicionar ao Carrinho</button>
     </div>
     <div class="menu-item">
-      <img src="https://www.receitasnestle.com.br/sites/default/files/srh_recipes/86f7100c92218a97fac8e3bbd18ed787.jpg" 
-           alt="Pizza Frango com Catupiry" class="menu-img" loading="lazy">
+      <img src="https://www.receitasnestle.com.br/sites/default/files/srh_recipes/86f7100c92218a97fac8e3bbd18ed787.jpg" alt="Pizza Frango com Catupiry" class="menu-img" loading="lazy">
       <strong>Frango com Catupiry</strong> - Frango desfiado, catupiry e orégano. R$ 17,50
+      <br><button onclick="adicionarAoCarrinho('Frango com Catupiry', 17.50)">Adicionar ao Carrinho</button>
     </div>
   </section>
 
-  <section id="sobre">
-    <h2>Sobre Nós</h2>
-    <p>A Pizzaria Divino Sabor procura uma pizza saborosa de verdade e com aquele preço que cabe no bolso. Usamos ingredientes frescos, massa leve e crocante, molho caseiro e muito recheio para garantir o melhor sabor em cada fatia.</p>
-    <p>Com uma variedade de sabores que vai do tradicional ao especial, nossas pizzas são perfeitas para aquele jantar em família, encontro com amigos ou para matar a fome de madrugada. Tudo isso com promoções imperdíveis todos os dias.</p>
-    <p>👉 Pizza boa, barata e feita com carinho.</p>
-  </section>
+  <section id="carrinho">
+    <h2>🛒 Carrinho</h2>
+    <ul id="lista-carrinho"></ul>
+    <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
+    <button onclick="limparCarrinho()">Esvaziar Carrinho</button>
+    <button onclick="confirmarCarrinho()">Confirmar Pedido</button>
+  </section> 
 
   <section id="contato">
     <h2>Contato</h2>
@@ -63,6 +65,19 @@
     <p><strong>Email:</strong> divinosabor@gmail.com</p>
     <p><strong>Horário de Funcionamento:</strong> 18:00 - 22:00</p>
   </section>
+
+  <section id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>A Pizzaria Divino Sabor procura uma pizza saborosa de verdade e com aquele preço que cabe no bolso. Usamos ingredientes frescos, massa leve e crocante, molho caseiro e muito recheio para garantir o melhor sabor em cada fatia.</p>
+    <p>Com uma variedade de sabores que vai do tradicional ao especial, nossas pizzas são perfeitas para aquele jantar em família, encontro com amigos ou para matar a fome de madrugada. Tudo isso com promoções imperdíveis todos os dias.</p>
+    <p>👉 Pizza boa, barata e feita com carinho.</p>
+  </section>
+</div> 
+
+<script src="script.js"></script>
+
+<div id="mensagem-confirmacao" style="display:none; position:fixed; top:20px; left:50%; transform:translateX(-50%); background-color:#4CAF50; color:white; padding:10px 20px; border-radius:5px; z-index:1000;">
+  Pedido confirmado com sucesso! 🍕
 </div>
 
 <footer>

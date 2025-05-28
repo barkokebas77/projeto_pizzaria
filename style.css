@@ -1,15 +1,20 @@
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background: #fff8f0;
+  text-align: center;
 }
 
 header {
   background-color: #d62828;
   color: white;
   padding: 20px;
-  text-align: center;
+}
+
+header h1, header p {
+  margin: 10px 0;
 }
 
 nav {
@@ -30,19 +35,21 @@ nav a {
 .container {
   padding: 20px;
   max-width: 1000px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 h2 {
   color: #d62828;
+  margin-bottom: 20px;
 }
 
 .menu-item {
   background: #fcbf49;
-  padding: 10px;
-  margin: 10px 0;
+  padding: 15px;
+  margin: 20px auto;
   border-radius: 8px;
   text-align: center;
+  max-width: 600px;
 }
 
 .menu-img {
@@ -52,6 +59,60 @@ h2 {
   display: block;
   margin: 10px auto;
   border-radius: 8px;
+}
+
+#carrinho {
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  border-radius: 8px;
+  max-width: 600px;
+  text-align: center;
+}
+
+#carrinho ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 15px;
+}
+
+#carrinho li {
+  margin-bottom: 10px;
+}
+
+#carrinho button {
+  margin-left: 10px;
+  background: #050000;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background: #003049;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+#sobre, #contato {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  text-align: center;
 }
 
 footer {
@@ -77,5 +138,9 @@ footer {
 
   .container {
     padding: 10px;
+  }
+
+  .menu-item, #carrinho, #sobre, #contato {
+    max-width: 95%;
   }
 }
